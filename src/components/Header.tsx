@@ -40,6 +40,7 @@ const Header = () => {
         <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         <button className="btn-get-started" onClick={() => setMenuOpen(false)}>Get Started</button>
       </nav>
+      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
     </>
   );
 };
