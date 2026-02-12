@@ -25,7 +25,7 @@ const Header = () => {
             <a href="#contact">Contact</a>
           </nav>
           <div className="header-buttons">
-            <button className="btn-login">Login</button>
+            <button className="btn-login" onClick={() => setAuthOpen(true)}>Login</button>
             <button className="btn-get-started">Get Started</button>
           </div>
           <button className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
