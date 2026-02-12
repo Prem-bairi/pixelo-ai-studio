@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import './Header.css';
+import AuthModal from './AuthModal';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -23,7 +25,7 @@ const Header = () => {
             <a href="#contact">Contact</a>
           </nav>
           <div className="header-buttons">
-            <button className="btn-login">Login</button>
+            <button className="btn-login" onClick={() => setAuthOpen(true)}>Login</button>
             <button className="btn-get-started">Get Started</button>
           </div>
           <button className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
@@ -38,6 +40,7 @@ const Header = () => {
         <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         <button className="btn-get-started" onClick={() => setMenuOpen(false)}>Get Started</button>
       </nav>
+      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
     </>
   );
 };
