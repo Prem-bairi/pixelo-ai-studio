@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import './Header.css';
+import AuthModal from './AuthModal';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
